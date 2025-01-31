@@ -1,4 +1,4 @@
-package com.wdcftgg.wdcftgglib.util;
+package com.wdcftgg.wdcftggTemplates.util;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;

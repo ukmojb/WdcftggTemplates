@@ -1,21 +1,17 @@
-package com.wdcftgg.wdcftgglib;
+package com.wdcftgg.wdcftggTemplates;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.DimensionType;
-import net.minecraftforge.common.DimensionManager;
+import com.wdcftgg.wdcftggTemplates.init.RegistryHandler;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = WdcftggLib.MODID, name = WdcftggLib.NAME, version = WdcftggLib.VERSION)
 public class WdcftggLib {
-    public static final String MODID = "WdcftggLib";
-    public static final String NAME = "wdcftgglib";
+    public static final String MODID = "wdcftgglib";
+    public static final String NAME = "WdcftggLib";
     public static final String VERSION = "1.0.0";
     public static Logger logger;
 
@@ -25,6 +21,8 @@ public class WdcftggLib {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+
+        RegistryHandler.preInitRegistries(event);
 
     }
 
@@ -37,13 +35,13 @@ public class WdcftggLib {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        RegistryHandler.postInitReg();
     }
 
 
     @Mod.EventHandler
     public static void serverInit(FMLServerStartingEvent event) {
-
+        RegistryHandler.serverRegistries(event);
     }
 
     public static void LogWarning(String str, Object... args) {
