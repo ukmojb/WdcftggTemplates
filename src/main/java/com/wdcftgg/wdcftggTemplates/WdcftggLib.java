@@ -1,7 +1,9 @@
 package com.wdcftgg.wdcftggTemplates;
 
 import com.wdcftgg.wdcftggTemplates.init.RegistryHandler;
+import com.wdcftgg.wdcftggTemplates.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -17,6 +19,12 @@ public class WdcftggLib {
 
     @Mod.Instance
     public static WdcftggLib instance;
+
+    public static final String CLIENT_PROXY_CLASS = "com.wdcftgg.wdcftggTemplates.proxy.ClientProxy";
+    public static final String SERVER_PROXY_CLASS = "com.wdcftgg.wdcftggTemplates.proxy.CommonProxy";
+
+    @SidedProxy(clientSide = CLIENT_PROXY_CLASS, serverSide = SERVER_PROXY_CLASS)
+    public static CommonProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {

@@ -1,6 +1,7 @@
 package com.wdcftgg.wdcftggTemplates.proxy;
 
-import com.wdcftgg.wdcftggTemplates.proxy.ParticleInit;
+
+import com.wdcftgg.wdcftggTemplates.init.ParticleInit;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.entity.RenderLivingBase;
 import net.minecraft.client.renderer.entity.RenderPlayer;
