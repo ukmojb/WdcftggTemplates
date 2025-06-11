@@ -32,6 +32,8 @@ public class WdcftggLib {
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
 
+        proxy.onPreInit();
+
         RegistryHandler.preInitRegistries(event);
 
         Config.init(event.getSuggestedConfigurationFile());
@@ -40,12 +42,16 @@ public class WdcftggLib {
 
     @Mod.EventHandler
     public static void Init(FMLInitializationEvent event) {
+        proxy.onInit();
+
         PacketHandler.init();
 
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        proxy.onPostInit();
+
         RegistryHandler.postInitReg();
     }
 
