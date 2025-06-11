@@ -1,5 +1,6 @@
 package com.wdcftgg.wdcftggTemplates;
 
+import com.wdcftgg.wdcftggTemplates.config.Config;
 import com.wdcftgg.wdcftggTemplates.init.RegistryHandler;
 import com.wdcftgg.wdcftggTemplates.network.PacketHandler;
 import com.wdcftgg.wdcftggTemplates.proxy.CommonProxy;
@@ -33,6 +34,7 @@ public class WdcftggLib {
 
         RegistryHandler.preInitRegistries(event);
 
+        Config.init(event.getSuggestedConfigurationFile());
     }
 
 
