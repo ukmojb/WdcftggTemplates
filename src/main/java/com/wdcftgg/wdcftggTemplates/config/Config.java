@@ -1,4 +1,4 @@
-package com.wdcftgg.spacetime.config;
+package com.wdcftgg.wdcftggTemplates.config;
 
 import net.minecraftforge.common.config.Configuration;
 

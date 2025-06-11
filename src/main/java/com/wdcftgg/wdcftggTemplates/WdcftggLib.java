@@ -1,6 +1,7 @@
 package com.wdcftgg.wdcftggTemplates;
 
 import com.wdcftgg.wdcftggTemplates.init.RegistryHandler;
+import com.wdcftgg.wdcftggTemplates.network.PacketHandler;
 import com.wdcftgg.wdcftggTemplates.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -37,7 +38,7 @@ public class WdcftggLib {
 
     @Mod.EventHandler
     public static void Init(FMLInitializationEvent event) {
-
+        PacketHandler.init();
 
     }
 
